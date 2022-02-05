@@ -26,6 +26,9 @@ function solution($N)
     // Therefor we pop the last and then first exploded elements.
     unset($zeros[count($zeros) - 1]);
     unset($zeros[0]);
+    if (count($zeros) == 0) {
+        return 0;
+    }
     return max(
         array_map('strlen', $zeros)
     );
