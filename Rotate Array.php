@@ -1,16 +1,19 @@
 <?php
-
-function rotate($nums, $k)
+// codility CyclicRotation
+function solution($A, $K)
 {
-    if ($k <= 0) {
-        return;
+    if ($K <= 0) {
+        return $A;
     }
-    $count = count($nums);
-    if ($count == 1) {
-        return;
+    $C = count($A);
+    if ($C <= 1) {
+        return $A;
     }
-    $k = $k > $count ? $k % $count : $k;
-    $nums = array_merge(array_slice($nums, -$k), array_slice($nums, 0, $count - $k));
+    $K = $K > $C ? $K % $C : $K;
+    return array_merge(
+        array_slice($A, -$K),
+        array_slice($A, 0, $C - $K)
+    );
 }
 
-echo rotate([1, 2, 3, 4, 5, 6, 7], 3);
+echo solution([1, 2, 3, 4, 5, 6, 7], 3);
