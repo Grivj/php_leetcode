@@ -1,5 +1,5 @@
 <?php
-
+// https://app.codility.com/demo/results/trainingWR5M8R-ZUB/
 function solution($A)
 {
     $lSum = 0;
